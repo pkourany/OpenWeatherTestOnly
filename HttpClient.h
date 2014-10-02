@@ -1,17 +1,17 @@
 #ifndef __HTTP_CLIENT_H_
 #define __HTTP_CLIENT_H_
 
-#include "spark_wiring_string.h"
-#include "spark_wiring_tcpclient.h"
-#include "spark_wiring_usbserial.h"
+//#include "spark_wiring_string.h"
+//#include "spark_wiring_tcpclient.h"
+//#include "spark_wiring_usbserial.h"
 
 /**
  * Defines for the HTTP methods.
  */
-#define HTTP_METHOD_GET    "GET"
-#define HTTP_METHOD_POST   "POST"
-#define HTTP_METHOD_PUT    "PUT"
-#define HTTP_METHOD_DELETE "DELETE"
+static const char* HTTP_METHOD_GET    = "GET";
+static const char* HTTP_METHOD_POST   = "POST";
+static const char* HTTP_METHOD_PUT    = "PUT";
+static const char* HTTP_METHOD_DELETE = "DELETE";
 
 /**
  * This struct is used to pass additional HTTP headers such as API-keys.
@@ -33,6 +33,7 @@ typedef struct
 typedef struct
 {
   String hostname;
+  IPAddress ip;
   String path;
   // TODO: Look at setting the port by default.
   //int port = 80;
